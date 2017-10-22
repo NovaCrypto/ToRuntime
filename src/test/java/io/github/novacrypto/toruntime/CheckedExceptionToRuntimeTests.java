@@ -50,6 +50,13 @@ public final class CheckedExceptionToRuntimeTests {
     }
 
     @Test
+    public void invokesOnceOnly() {
+        IntSpy intSpy = new IntSpy();
+        toRuntime(intSpy::increment);
+        assertEquals(1, intSpy.invocations);
+    }
+
+    @Test
     public void checkedException1() {
         assertThatThrownBy(() ->
                 toRuntime(() -> {
@@ -72,6 +79,13 @@ public final class CheckedExceptionToRuntimeTests {
     }
 
     @Test
+    public void noExceptionVoidInvokesOnce() {
+        VoidSpy sb = new VoidSpy();
+        toRuntime(sb::voidMethod);
+        assertEquals(1, sb.invocations);
+    }
+
+    @Test
     public void checkedExceptionVoidResult() {
         assertThatThrownBy(() ->
                 toRuntime(this::failWithIndexOutOfBoundsException))
@@ -81,5 +95,24 @@ public final class CheckedExceptionToRuntimeTests {
 
     private void failWithIndexOutOfBoundsException() {
         throw new IndexOutOfBoundsException();
+    }
+
+    private class IntSpy {
+        int invocations;
+
+        int increment() {
+            invocations++;
+            return invocations;
+        }
+    }
+
+    private class VoidSpy {
+
+        int invocations;
+
+        void voidMethod() {
+            invocations++;
+        }
+
     }
 }
