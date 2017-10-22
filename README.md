@@ -2,6 +2,27 @@
 
 Improve test coverage by trapping and promoting tricky checked exceptions you don't really expect or can't handle.
 
+# Install
+
+```
+repositories {
+    maven {
+        url 'https://dl.bintray.com/novacrypto/General/'
+    }
+}
+```
+
+(jcenter soon)
+
+Add dependency:
+
+```
+dependencies {
+    compile 'io.github.novacrypto:ToRuntime:0.9.0@jar'
+}
+
+```
+
 # Usage
 
 Migrate from:
