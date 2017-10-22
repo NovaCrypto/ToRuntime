@@ -26,11 +26,11 @@ package io.github.novacrypto.toruntime;
  */
 public final class CheckedExceptionToRuntime {
 
-    interface Func<T> {
+    public interface Func<T> {
         T run() throws Exception;
     }
 
-    interface Action {
+    public interface Action {
         void run() throws Exception;
     }
 
@@ -44,7 +44,7 @@ public final class CheckedExceptionToRuntime {
     public static <T> T toRuntime(final Func<T> function) {
         try {
             return function.run();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new RuntimeException(e);
         }
     }
@@ -57,7 +57,7 @@ public final class CheckedExceptionToRuntime {
     public static void toRuntime(final Action function) {
         try {
             function.run();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             throw new RuntimeException(e);
         }
     }
