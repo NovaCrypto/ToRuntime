@@ -4,6 +4,16 @@ Improve test coverage by trapping and promoting tricky checked exceptions you do
 
 # Install
 
+Use either of these repositories:
+
+```
+repositories {
+    jcenter()
+}
+```
+
+or:
+
 ```
 repositories {
     maven {
@@ -11,8 +21,6 @@ repositories {
     }
 }
 ```
-
-(jcenter soon)
 
 Add dependency:
 
