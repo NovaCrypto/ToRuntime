@@ -41,7 +41,7 @@ compileJava {
 
 dependencies {
     testCompile 'junit:junit:4.11'
-    testCompile 'org.assertj:assertj-core:3.8.0'
+    testCompile 'org.assertj:assertj-core:3.11.1'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
