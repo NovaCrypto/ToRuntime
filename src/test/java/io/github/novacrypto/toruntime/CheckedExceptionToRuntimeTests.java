@@ -29,12 +29,14 @@ import java.security.NoSuchAlgorithmException;
 import static io.github.novacrypto.toruntime.CheckedExceptionToRuntime.toRuntime;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public final class CheckedExceptionToRuntimeTests {
 
     @Test
     public void forCodeCoverageOnly_create() {
-        new CheckedExceptionToRuntime();
+        //noinspection ObviousNullCheck
+        assertNotNull(new CheckedExceptionToRuntime());
     }
 
     @Test
@@ -97,7 +99,7 @@ public final class CheckedExceptionToRuntimeTests {
         throw new IndexOutOfBoundsException();
     }
 
-    private class IntSpy {
+    private static class IntSpy {
         int invocations;
 
         int increment() {
@@ -106,7 +108,7 @@ public final class CheckedExceptionToRuntimeTests {
         }
     }
 
-    private class VoidSpy {
+    private static class VoidSpy {
 
         int invocations;
 
