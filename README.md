@@ -26,7 +26,7 @@ Add dependency:
 
 ```
 dependencies {
-    compile 'io.github.novacrypto:ToRuntime:2018.10.06@jar'
+    compile 'io.github.novacrypto:ToRuntime:2019.01.27@jar'
 }
 
 ```
