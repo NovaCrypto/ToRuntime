@@ -1,6 +1,6 @@
 /*
  *  ToRuntime library, Java promotions of checked exceptions to runtime exceptions
- *  Copyright (C) 2017-2019 Alan Evans, NovaCrypto
+ *  Copyright (C) 2017-2022 Alan Evans, NovaCrypto
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -67,8 +67,6 @@ task('installSharedIdea', type: Copy) {
     into '.idea/'
 }
 
-//
-
 def hasMavenCentralCredentials = hasProperty('ossrhUsername')
 def hasSigningDetails = hasProperty('signing.keyId')
 
@@ -76,7 +74,7 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'io.github.novacrypto'
-            artifactId = 'ToRuntime'
+            artifactId = project.name
             version = '2022.01.17'
 
             from components.java
@@ -89,9 +87,9 @@ publishing {
                 }
             }
             pom {
-                name = 'ToRuntime'
-                description = 'Enforces zero usages of VERSION_CODE constants'
-                url = 'https://github.com/NovaCrypto/ToRuntime'
+                name = project.name
+                description = project.description
+                url = "https://github.com/NovaCrypto/${project.name}"
                 licenses {
                     license {
                         name = 'GNU General Public License v3'
@@ -106,9 +104,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = 'scm:git:git://github.com/NovaCrypto/ToRuntime.git'
-                    developerConnection = 'scm:git:ssh://github.com/NovaCrypto/ToRuntime.git'
-                    url = 'https://github.com/NovaCrypto/ToRuntime'
+                    connection = "scm:git:git://github.com/NovaCrypto/${project.name}.git"
+                    developerConnection = "scm:git:ssh://github.com/NovaCrypto/${project.name}.git"
+                    url = "https://github.com/NovaCrypto/${project.name}"
                 }
             }
         }
