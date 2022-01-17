@@ -1,24 +1,14 @@
-[![Download](https://api.bintray.com/packages/novacrypto/General/ToRuntime/images/download.svg)](https://bintray.com/novacrypto/General/ToRuntime/_latestVersion) [![Build Status](https://travis-ci.org/NovaCrypto/ToRuntime.svg?branch=master)](https://travis-ci.org/NovaCrypto/ToRuntime) [![codecov](https://codecov.io/gh/NovaCrypto/ToRuntime/branch/master/graph/badge.svg)](https://codecov.io/gh/NovaCrypto/ToRuntime)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.novacrypto/ToRuntime)
 
 Improve test coverage by trapping and promoting tricky checked exceptions you don't really expect or can't handle.
 
 # Install
 
-Use either of these repositories:
+Using:
 
 ```
 repositories {
-    jcenter()
-}
-```
-
-or:
-
-```
-repositories {
-    maven {
-        url 'https://dl.bintray.com/novacrypto/General/'
-    }
+    mavenCentral()
 }
 ```
 
@@ -26,7 +16,7 @@ Add dependency:
 
 ```
 dependencies {
-    compile 'io.github.novacrypto:ToRuntime:2019.01.27@jar'
+    implementation 'io.github.novacrypto:ToRuntime:2022.01.17@jar'
 }
 
 ```
