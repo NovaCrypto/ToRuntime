@@ -39,7 +39,7 @@ public final class CheckedExceptionToRuntimeTests {
         assertNotNull(new CheckedExceptionToRuntime());
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void noException() {
         assertEquals("Hello",
                 toRuntime(() -> "Hello"));
